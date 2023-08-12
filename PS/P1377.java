@@ -11,6 +11,7 @@ public class P1377 {
         int N = Integer.parseInt(bf.readLine());
         mData[] A = new mData[N];
 
+        // save the data of original value paired with its index
         for (int i = 0; i < N; i++) {
             A[i] = new mData(Integer.parseInt(bf.readLine()), i);
         }
