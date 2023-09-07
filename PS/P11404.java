@@ -47,9 +47,13 @@ public class P11404 {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
                 if (distance[i][j] == 100001) {
-                    System.out.print("0 ");
+                    System.out.print("0");
                 } else {
-                    System.out.print(distance[i][j] + " ");
+                    System.out.print(distance[i][j]);
+                }
+
+                if (j != n) {
+                    System.out.print(" ");
                 }
             }
             System.out.println();
