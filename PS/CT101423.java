@@ -1,7 +1,9 @@
 package PS;
 
 public class CT101423 {
-    public int solution(int[] events, int limit) {
+    public static void main(String[] args) {
+        int[] events = {3, 7, 8};
+        int limit = 1;
         int answer = 0;
         // start checking from the longest interval possible == last element of events + 1?
         // even if the limit is max, the result cannot be more than last element of events + 1
@@ -12,10 +14,14 @@ public class CT101423 {
 
         // loop until longest possible interval is found
         while (true) {
+            
             for (int i = cnt; i < events.length; i++) { // keeping the count of the index to start is not working properly...
+                System.out.println("cnt: " + cnt);
+                System.out.println("events[" + i + "]: " + events[i] + " interval: " + interval);
                 // check for 0 sec
                 if (events[i] < interval) { // if events[i] is less than interval, check
                     check++;
+                    cnt++;
                 } else { // if not
                     interval += maxInterval; // add to interval and check again
                     cnt = i;
@@ -28,7 +34,7 @@ public class CT101423 {
                     interval = 0;
                     break;
                 }
-
+                System.out.println("check: " + check);
             }
 
             if (interval > events[events.length-1]) {
@@ -37,6 +43,6 @@ public class CT101423 {
             }
         }
 
-        return answer;
+        System.out.println(answer);
     }
 }
